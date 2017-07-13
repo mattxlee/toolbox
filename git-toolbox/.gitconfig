@@ -1,0 +1,19 @@
+[user]
+  name = Matthew Lee
+  email = mattxlee@gmail.com
+[color]
+  ui = true
+[alias]
+  st = status -s
+  lg = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit
+[core]
+  quotepath = false
+  editor = vi
+  pager = less -F -X
+  autocrlf = input
+[gui]
+  encoding = utf-8
+[push]
+  default = simple
+# [http]
+#   proxy = http://127.0.0.1:1080

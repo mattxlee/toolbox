@@ -1,0 +1,20 @@
+# HG changeset patch
+# User Nicolas Goles <me@nicolasgoles.com>
+# Date 1376276970 14400
+#      Sun Aug 11 23:09:30 2013 -0400
+# Node ID 75f44cf36d49b713f5fc5468db800d4e27d2a2c1
+# Parent  a643d80b65071c4713309430a0c29da35ff90d45
+Fixes error while compiling under OS X 10.9 Mavericks
+
+diff -r a643d80b6507 -r 75f44cf36d49 src/os_unix.c
+--- a/src/os_unix.c	Sat Aug 10 15:00:24 2013 +0200
++++ b/src/os_unix.c	Sun Aug 11 23:09:30 2013 -0400
+@@ -827,7 +827,7 @@
+ 		|| MAC_OS_X_VERSION_MAX_ALLOWED <= 1040)
+ 	/* missing prototype.  Adding it to osdef?.h.in doesn't work, because
+ 	 * "struct sigaltstack" needs to be declared. */
+-	extern int sigaltstack __ARGS((const struct sigaltstack *ss, struct sigaltstack *oss));
++ extern int sigaltstack __ARGS((const stack_t *restrict ss, stack_t *restrict oss));
+ #  endif
+ 
+ #  ifdef HAVE_SS_BASE
