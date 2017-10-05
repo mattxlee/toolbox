@@ -37,12 +37,12 @@ Plugin 'tpope/vim-surround' " Surround for tags or strings
 Plugin 'mattn/emmet-vim' " Plugin for html editor
 Plugin 'pangloss/vim-javascript' "Enhance javascript syntax display
 Plugin 'hdima/python-syntax' "Enhance python syntax display
-Plugin 'evanmiller/nginx-vim-syntax' "Enhance nginx configuration file syntax
 Plugin 'godlygeek/tabular' "Vim script for text filtering and alignment
 Plugin 'plasticboy/vim-markdown' "Markdown syntax highlights
 Plugin 'dcharbon/vim-flatbuffers' "FlatBuffers file support
-Plugin 'morhetz/gruvbox' "Gruvbox colorscheme
 Plugin 'leafgarland/typescript-vim' "TypeScript language support
+
+Plugin 'morhetz/gruvbox' "Gruvbox colorscheme
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
