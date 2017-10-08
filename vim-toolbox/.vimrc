@@ -39,9 +39,9 @@ Plugin 'vim-syntastic/syntastic' "Syntax checker
 Plugin 'eslint/eslint' "Javascript syntax checker
 
 " ==== You complete me ====
-Plugin 'ervandew/supertab'
-Plugin 'SirVer/ultisnips'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'ervandew/supertab'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'Valloric/YouCompleteMe'
 " ==== You complete me ====
 
 Plugin 'morhetz/gruvbox' "Gruvbox colorscheme
@@ -55,8 +55,8 @@ set fileencoding=utf-8
 set fileencodings=ucs-bom,utf8,prc
 
 " ==== You complete me ====
-let g:ycm_confirm_extra_conf=0
-let g:ycm_show_diagnostics_ui=1
+" let g:ycm_confirm_extra_conf=0
+" let g:ycm_show_diagnostics_ui=1
 " ==== You complete me ====
 
 let c_no_curly_error=1
@@ -113,8 +113,8 @@ set formatoptions+=1
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 
 " ==== You complete me ====
-map <C-K> :YcmCompleter GoTo<CR>
-map B :YcmDiags<CR>
+" map <C-K> :YcmCompleter GoTo<CR>
+" map B :YcmDiags<CR>
 " ==== You complete me ====
 
 map <C-T> :TaskList<CR>
