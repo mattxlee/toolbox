@@ -14,13 +14,6 @@ Plugin 'TaskList.vim' "ctrl+t to show all TODO tag of current file
 Plugin 'DoxygenToolkit.vim' "Doxydoc to add comments of current code
 Plugin 'Conque-GDB' "GDB support
 Plugin 'ShowTrailingWhitespace' "Show white space characters
-
-" ==== You complete me ====
-" Plugin 'ervandew/supertab'
-" Plugin 'SirVer/ultisnips'
-" Plugin 'Valloric/YouCompleteMe'
-" ==== You complete me ====
-
 Plugin 'rking/ag.vim' "quick find, ctrlsf.vim depends on it
 Plugin 'dyng/ctrlsf.vim' "ctrl+g to search in files
 Plugin 'terryma/vim-multiple-cursors' "ctrl+n to select multiply words
@@ -33,14 +26,23 @@ Plugin 'bling/vim-airline' "beauty status-bar
 Plugin 'tomtom/tcomment_vim' "gc to make comment of selected lines
 Plugin 'gcmt/wildfire.vim' "enter to select current range
 Plugin 'rhysd/vim-clang-format' "shift+c to format code
-Plugin 'tpope/vim-surround' " Surround for tags or strings
-Plugin 'mattn/emmet-vim' " Plugin for html editor
+Plugin 'tpope/vim-surround' "Surround for tags or strings
+Plugin 'mattn/emmet-vim' "Plugin for html editor
 Plugin 'pangloss/vim-javascript' "Enhance javascript syntax display
 Plugin 'hdima/python-syntax' "Enhance python syntax display
 Plugin 'godlygeek/tabular' "Vim script for text filtering and alignment
 Plugin 'plasticboy/vim-markdown' "Markdown syntax highlights
 Plugin 'dcharbon/vim-flatbuffers' "FlatBuffers file support
 Plugin 'leafgarland/typescript-vim' "TypeScript language support
+Plugin 'editorconfig/editorconfig-vim' "Editor config file manager
+Plugin 'vim-syntastic/syntastic' "Syntax checker
+Plugin 'eslint/eslint' "Javascript syntax checker
+
+" ==== You complete me ====
+Plugin 'ervandew/supertab'
+Plugin 'SirVer/ultisnips'
+Plugin 'Valloric/YouCompleteMe'
+" ==== You complete me ====
 
 Plugin 'morhetz/gruvbox' "Gruvbox colorscheme
 
@@ -53,8 +55,8 @@ set fileencoding=utf-8
 set fileencodings=ucs-bom,utf8,prc
 
 " ==== You complete me ====
-" let g:ycm_confirm_extra_conf=0
-" let g:ycm_show_diagnostics_ui=1
+let g:ycm_confirm_extra_conf=0
+let g:ycm_show_diagnostics_ui=1
 " ==== You complete me ====
 
 let c_no_curly_error=1
@@ -74,6 +76,17 @@ let g:ConqueTerm_CloseOnEnd=1
 let g:NERDTreeWinSize=40
 let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = '-'
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers=['eslint']
 
 syntax enable
 
@@ -100,8 +113,8 @@ set formatoptions+=1
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 
 " ==== You complete me ====
-" map <C-K> :YcmCompleter GoTo<CR>
-" map B :YcmDiags<CR>
+map <C-K> :YcmCompleter GoTo<CR>
+map B :YcmDiags<CR>
 " ==== You complete me ====
 
 map <C-T> :TaskList<CR>
