@@ -110,6 +110,8 @@ set textwidth=0
 set wrapmargin=0
 set formatoptions+=1
 
+let g:ctrlsf_ackprg='ag'
+
 " Use LEADER + W to clear trailing spaces.
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 
