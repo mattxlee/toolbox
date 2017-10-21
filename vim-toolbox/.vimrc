@@ -37,6 +37,7 @@ Plugin 'leafgarland/typescript-vim' "TypeScript language support
 Plugin 'editorconfig/editorconfig-vim' "Editor config file manager
 Plugin 'vim-syntastic/syntastic' "Syntax checker
 Plugin 'eslint/eslint' "Javascript syntax checker
+Plugin 'fatih/vim-go' "Go language support
 
 " ==== You complete me ====
 " Plugin 'ervandew/supertab'
@@ -112,6 +113,12 @@ set formatoptions+=1
 " Use LEADER + W to clear trailing spaces.
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 
+" Use LEADER + B to build GO source
+autocmd FileType go nmap <leader>b <Plug>(go-build)
+
+" Use LEADER + R to run GO source
+autocmd FileType go nmap <leader>r <Plug>(go-run)
+
 " ==== You complete me ====
 " map <C-K> :YcmCompleter GoTo<CR>
 " map B :YcmDiags<CR>
@@ -122,7 +129,7 @@ map <C-J> :NERDTreeFind<CR>
 map <C-H> :A<CR>
 map <C-L> :CtrlSF -G .*
 map <C-G> :Gstatus<CR>
-map K :on<CR>
+
 map L :CtrlSFToggle<CR>
 map C :ClangFormat<CR>
 map M :Dox<CR>
