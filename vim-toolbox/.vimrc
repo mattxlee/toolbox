@@ -134,7 +134,6 @@ map <C-G> :Gstatus<CR>
 
 map L :CtrlSFToggle<CR>
 map C :ClangFormat<CR>
-map M :Dox<CR>
 
 highlight Visual cterm=None ctermfg=Black ctermbg=Blue
 highlight LineNr cterm=None ctermfg=243 ctermbg=237
