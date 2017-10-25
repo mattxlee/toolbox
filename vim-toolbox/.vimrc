@@ -35,6 +35,12 @@ Plugin 'morhetz/gruvbox' "Gruvbox colorscheme
 " Plugin 'rhysd/vim-clang-format' "shift+c to format code
 " ==== Clang format ====
 
+" ==== You complete me ====
+" Plugin 'ervandew/supertab'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'Valloric/YouCompleteMe'
+" ==== You complete me ====
+
 " ==== VIM markdown ====
 " Plugin 'plasticboy/vim-markdown' "Markdown syntax highlights
 " ==== VIM markdown ====
@@ -42,10 +48,13 @@ Plugin 'morhetz/gruvbox' "Gruvbox colorscheme
 " ==== JS, Typescript support ====
 " Plugin 'mattn/emmet-vim' "Plugin for html editor
 " Plugin 'pangloss/vim-javascript' "Enhance javascript syntax display
-" Plugin 'vim-syntastic/syntastic' "Syntax checker
 " Plugin 'eslint/eslint' "Javascript syntax checker
 " Plugin 'leafgarland/typescript-vim' "TypeScript language support
 " ==== JS, Typescript support ====
+
+" ==== Syntax checker ====
+" Plugin 'vim-syntastic/syntastic' "Syntax checker
+" ==== Syntax checker ====
 
 " ==== GO support ====
 " Plugin 'fatih/vim-go' "Go language support
@@ -55,24 +64,22 @@ Plugin 'morhetz/gruvbox' "Gruvbox colorscheme
 " Plugin 'Conque-GDB' "GDB support
 " ==== GDB support ====
 
-" ==== You complete me ====
-" Plugin 'ervandew/supertab'
-" Plugin 'SirVer/ultisnips'
-" Plugin 'Valloric/YouCompleteMe'
-" ==== You complete me ====
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-set encoding=utf-8
-set fileencoding=utf-8
-set fileencodings=ucs-bom,utf8,prc
-
 " ==== Clang format ====
 " let g:clang_format#code_style='google'
 " let g:clang_format#detect_style_file=1
+" map C :ClangFormat<CR>
 " ==== Clang format ====
+
+" ==== You complete me ====
+" let g:ycm_confirm_extra_conf=0
+" let g:ycm_show_diagnostics_ui=1
+" map <C-K> :YcmCompleter GoTo<CR>
+" map B :YcmDiags<CR>
+" ==== You complete me ====
 
 " ==== Syntax checker ====
 " let g:syntastic_always_populate_loc_list = 1
@@ -82,16 +89,20 @@ set fileencodings=ucs-bom,utf8,prc
 " let g:syntastic_javascript_checkers=['eslint']
 " ==== Syntax checker ====
 
-" ==== You complete me ====
-" let g:ycm_confirm_extra_conf=0
-" let g:ycm_show_diagnostics_ui=1
-" ==== You complete me ====
+" ==== GO support ====
+" autocmd FileType go nmap <leader>b <Plug>(go-build)
+" autocmd FileType go nmap <leader>r <Plug>(go-run)
+" ==== GO support ====
 
-" ==== GDB support ====
+" === GDB support ====
 " let g:ConqueTerm_StartMessages=0
 " let g:ConqueTerm_Color=2
 " let g:ConqueTerm_CloseOnEnd=1
-" ==== GDB support ====
+" === GDB support ====
+
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf8,prc
 
 let c_no_curly_error=1
 let g:bookmark_auto_close=1
@@ -133,20 +144,6 @@ let g:ctrlsf_ackprg='ag'
 
 " Use LEADER + W to clear trailing spaces.
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
-
-" ==== Clang format ====
-" map C :ClangFormat<CR>
-" ==== Clang format ====
-
-" ==== GO support ====
-" autocmd FileType go nmap <leader>b <Plug>(go-build)
-" autocmd FileType go nmap <leader>r <Plug>(go-run)
-" ==== GO support ====
-
-" ==== You complete me ====
-" map <C-K> :YcmCompleter GoTo<CR>
-" map B :YcmDiags<CR>
-" ==== You complete me ====
 
 map <C-T> :TaskList<CR>
 map <C-J> :NERDTreeFind<CR>
