@@ -31,6 +31,10 @@ Plugin 'dcharbon/vim-flatbuffers' "FlatBuffers file support
 Plugin 'editorconfig/editorconfig-vim' "Editor config file manager
 Plugin 'morhetz/gruvbox' "Gruvbox colorscheme
 
+" ==== Clang format ====
+" Plugin 'rhysd/vim-clang-format' "shift+c to format code
+" ==== Clang format ====
+
 " ==== VIM markdown ====
 " Plugin 'plasticboy/vim-markdown' "Markdown syntax highlights
 " ==== VIM markdown ====
@@ -52,7 +56,6 @@ Plugin 'morhetz/gruvbox' "Gruvbox colorscheme
 " ==== GDB support ====
 
 " ==== You complete me ====
-" Plugin 'rhysd/vim-clang-format' "shift+c to format code
 " Plugin 'ervandew/supertab'
 " Plugin 'SirVer/ultisnips'
 " Plugin 'Valloric/YouCompleteMe'
@@ -66,6 +69,11 @@ set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf8,prc
 
+" ==== Clang format ====
+" let g:clang_format#code_style='google'
+" let g:clang_format#detect_style_file=1
+" ==== Clang format ====
+
 " ==== Syntax checker ====
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
@@ -77,9 +85,6 @@ set fileencodings=ucs-bom,utf8,prc
 " ==== You complete me ====
 " let g:ycm_confirm_extra_conf=0
 " let g:ycm_show_diagnostics_ui=1
-" let g:clang_format#code_style='google'
-" let g:clang_format#detect_style_file=1
-" map C :ClangFormat<CR>
 " ==== You complete me ====
 
 " ==== GDB support ====
@@ -128,6 +133,10 @@ let g:ctrlsf_ackprg='ag'
 
 " Use LEADER + W to clear trailing spaces.
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
+
+" ==== Clang format ====
+" map C :ClangFormat<CR>
+" ==== Clang format ====
 
 " ==== GO support ====
 " autocmd FileType go nmap <leader>b <Plug>(go-build)
