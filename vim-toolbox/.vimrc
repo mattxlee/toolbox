@@ -139,6 +139,7 @@ set nolist
 set textwidth=0
 set wrapmargin=0
 set formatoptions+=1
+set cursorline
 
 let g:ctrlsf_ackprg='ag'
 
